@@ -1,0 +1,62 @@
+.tourist-routes_wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.tourist-routes {
+    width: 350px;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: grey;
+}
+
+.tourist-routes h2 {
+    font-size: 30px;
+    margin: 0;
+    color: yellow;
+}
+
+.tourist-routes p {
+    font-size: 20px;
+    color: white;
+}
+
+.tourist-routes.selected {
+    background-color: #cee8fe;
+    transform: scale(1.2);
+}
+
+.tourist-routes.selected h2 {
+    color: #369d39;
+}
+
+.tourist-routes.selected p {
+    color: #369d39;
+}
+
+.tourist-routes_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tourist-routes_list h2 {
+    font-size: 30px;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.tourist-routes_list p {
+    font-size: 20px;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.tourist-routes_list button {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px;
+    padding: 5px 10px;
+}
