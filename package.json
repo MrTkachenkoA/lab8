@@ -1,8 +1,8 @@
 {
-  "name": "lab7",
+  "name": "lab8",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://MrTkachenkoA.github.io/lab7/",
+  "homepage": "https://MrTkachenkoA.github.io/lab8/",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

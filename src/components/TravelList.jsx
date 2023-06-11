@@ -3,8 +3,6 @@ import { useState } from "react";
 export const TravelList = (props) => {
   const [routes, setRoutes] = useState(props.routes);
 
-  console.log(routes);
-
   const deleteRoute = (id) => {
     setRoutes((prevRoutes) => prevRoutes.filter((route) => route.id !== id));
   };
@@ -20,23 +18,39 @@ export const TravelList = (props) => {
     }
   };
 
-  const thetravel = (id, name) => (
-    <div key={id}>
-      <p>{name}</p>
-      <button onClick={() => deleteRoute(id)}>Delete</button>
-      <button onClick={() => editRoute(id)}>Edit</button>
-    </div>
-  );
+  const addRoute = () => {
+    const newName = prompt("Enter the new name for the route:");
+    if (newName) {
+      const newRoute = { id: new Date(), name: newName };
+      setRoutes((prevRoutes) => [...prevRoutes, newRoute]);
+    }
+  };
+
+  const theTravel = (id, name) => {
+    const updateTravel = () => editRoute(id);
+    const delTravel = () => deleteRoute(id);
+
+    return (
+      <div key={id}>
+        <p>{name}</p>
+        <button onClick={updateTravel}>Edit</button>
+        <button onClick={delTravel}>Delete</button>
+      </div>
+    );
+  };
 
   const renderRoutes = () => {
     return routes.map((route) => {
-      return thetravel(route.id, route.name);
+      return theTravel(route.id, route.name);
     });
   };
 
   return (
     <div className="tourist-routes_list">
       <h2>Travel List</h2>
+      <button className="tourist-routes_btn" onClick={addRoute}>
+        Add new route
+      </button>
       {renderRoutes()}
     </div>
   );
